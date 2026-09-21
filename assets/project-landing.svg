@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-landing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="250" rx="12" fill="url(#bg-landing)"/>
+  
+  <!-- Browser Window Frame -->
+  <g transform="translate(45, 30)">
+    <!-- Window Shadow -->
+    <rect x="0" y="0" width="310" height="190" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    
+    <!-- Window Header -->
+    <rect x="0" y="0" width="310" height="22" rx="8" fill="#f8fafc"/>
+    <rect x="0" y="14" width="310" height="8" fill="#f8fafc"/>
+    <line x1="0" y1="22" x2="310" y2="22" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <circle cx="12" cy="11" r="3" fill="#ef4444"/>
+    <circle cx="22" cy="11" r="3" fill="#f59e0b"/>
+    <circle cx="32" cy="11" r="3" fill="#10b981"/>
+    <rect x="50" y="6" width="160" height="10" rx="5" fill="#e2e8f0"/>
+    
+    <!-- Hero Banner inside website -->
+    <rect x="15" y="32" width="130" height="10" rx="2" fill="#0f172a"/>
+    <rect x="15" y="46" width="150" height="5" rx="1.5" fill="#64748b"/>
+    <rect x="15" y="54" width="110" height="5" rx="1.5" fill="#64748b"/>
+    <rect x="15" y="66" width="55" height="15" rx="4" fill="#0284c7"/>
+    
+    <!-- Right side Dashboard Card -->
+    <rect x="180" y="32" width="115" height="140" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="190" y="42" width="50" height="6" rx="2" fill="#0284c7"/>
+    <rect x="190" y="54" width="95" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <circle cx="202" cy="69" r="6" fill="#38bdf8"/>
+    <rect x="214" y="64" width="45" height="4" rx="2" fill="#0f172a"/>
+    <rect x="214" y="71" width="30" height="3" rx="1.5" fill="#94a3b8"/>
+    
+    <rect x="190" y="90" width="95" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <circle cx="202" cy="105" r="6" fill="#34d399"/>
+    <rect x="214" y="100" width="50" height="4" rx="2" fill="#0f172a"/>
+    <rect x="214" y="107" width="25" height="3" rx="1.5" fill="#94a3b8"/>
+    
+    <rect x="190" y="126" width="95" height="36" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+    <!-- Tiny Bar Chart -->
+    <rect x="200" y="145" width="6" height="12" rx="1" fill="#38bdf8"/>
+    <rect x="210" y="140" width="6" height="17" rx="1" fill="#0284c7"/>
+    <rect x="220" y="148" width="6" height="9" rx="1" fill="#38bdf8"/>
+    <rect x="230" y="136" width="6" height="21" rx="1" fill="#0284c7"/>
+    <rect x="240" y="142" width="6" height="15" rx="1" fill="#38bdf8"/>
+    <rect x="250" y="133" width="6" height="24" rx="1" fill="#0369a1"/>
+    
+    <!-- Feature columns bottom left -->
+    <rect x="15" y="95" width="45" height="40" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="15" y="142" width="45" height="30" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="68" y="95" width="45" height="40" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="68" y="142" width="45" height="30" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="121" y="95" width="45" height="40" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="121" y="142" width="45" height="30" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+  </g>
+</svg>

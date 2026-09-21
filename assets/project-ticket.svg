@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-ticket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="ticket-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="250" rx="12" fill="url(#bg-ticket)"/>
+  
+  <!-- Left Phone (Main UI) -->
+  <g transform="translate(100, 35)">
+    <rect x="0" y="0" width="85" height="180" rx="14" fill="#18181b" stroke="#27272a" stroke-width="1.5"/>
+    <rect x="28" y="6" width="28" height="4" rx="2" fill="#09090b"/>
+    <!-- App UI -->
+    <rect x="10" y="20" width="30" height="5" rx="2" fill="#a1a1aa"/>
+    <rect x="10" y="30" width="65" height="35" rx="6" fill="#27272a"/>
+    <rect x="16" y="48" width="40" height="4" rx="2" fill="#ffffff"/>
+    <rect x="16" y="55" width="20" height="3" rx="1.5" fill="#f59e0b"/>
+    <!-- Event item 1 -->
+    <rect x="10" y="72" width="65" height="22" rx="4" fill="#27272a"/>
+    <rect x="14" y="76" width="14" height="14" rx="2" fill="url(#ticket-gold)"/>
+    <rect x="33" y="79" width="35" height="3" rx="1.5" fill="#ffffff"/>
+    <rect x="33" y="85" width="22" height="3" rx="1.5" fill="#71717a"/>
+    <!-- Event item 2 -->
+    <rect x="10" y="100" width="65" height="22" rx="4" fill="#27272a"/>
+    <rect x="14" y="104" width="14" height="14" rx="2" fill="#3b82f6"/>
+    <rect x="33" y="107" width="35" height="3" rx="1.5" fill="#ffffff"/>
+    <rect x="33" y="113" width="22" height="3" rx="1.5" fill="#71717a"/>
+  </g>
+  
+  <!-- Right Phone (Ticket Details & QR Code) -->
+  <g transform="translate(205, 45)">
+    <rect x="0" y="0" width="85" height="175" rx="14" fill="#09090b" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="28" y="6" width="28" height="4" rx="2" fill="#000000"/>
+    
+    <!-- Ticket Card inside screen -->
+    <g transform="translate(8, 22)">
+      <rect x="0" y="0" width="69" height="120" rx="8" fill="url(#ticket-gold)"/>
+      <rect x="6" y="8" width="57" height="40" rx="4" fill="#18181b"/>
+      <circle cx="34" cy="24" r="8" fill="#f59e0b" opacity="0.8"/>
+      <text x="18" y="42" font-family="sans-serif" font-size="5" font-weight="bold" fill="#ffffff">VIP ACCESS</text>
+      <!-- Perforated line -->
+      <line x1="0" y1="60" x2="69" y2="60" stroke="#09090b" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <!-- QR mock -->
+      <rect x="22" y="70" width="25" height="25" fill="#18181b" rx="2"/>
+      <rect x="26" y="74" width="7" height="7" fill="#ffffff"/>
+      <rect x="36" y="74" width="7" height="7" fill="#ffffff"/>
+      <rect x="26" y="84" width="7" height="7" fill="#ffffff"/>
+      <rect x="36" y="84" width="7" height="7" fill="#f59e0b"/>
+      <text x="16" y="105" font-family="sans-serif" font-size="4" fill="#18181b" font-weight="bold">SCAN AT ENTRANCE</text>
+    </g>
+  </g>
+</svg>
