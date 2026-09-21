@@ -104,10 +104,6 @@ function loadFrame(i) {
       loadedFlags[i] = true;
       loadedCount++;
 
-      const pct = Math.round((loadedCount / FRAME_COUNT) * 100);
-      if (loaderProgress) loaderProgress.style.width = `${pct}%`;
-      if (loaderText) loaderText.textContent = `Loading experience... ${pct}%`;
-
       // Render first frame as early as possible
       if (i === 0 && !isReady) {
         drawFrame(0);
@@ -126,11 +122,26 @@ function loadFrame(i) {
 
 // Progressive Preloading
 async function preloadImages() {
+  // Smooth 2-second fake loading animation
+  let fakeProgress = 0;
+  const interval = setInterval(() => {
+    fakeProgress += 1;
+    if (fakeProgress > 100) fakeProgress = 100;
+    
+    if (loaderProgress) loaderProgress.style.width = `${fakeProgress}%`;
+    if (loaderText) loaderText.textContent = `Loading experience... ${fakeProgress}%`;
+    
+    if (fakeProgress >= 100) {
+      clearInterval(interval);
+      if (!isReady) markReady();
+    }
+  }, 20); // 20ms * 100 = 2000ms (2 seconds)
+
   // 1. Immediately load frame 1 for instant visual display
   await loadFrame(0);
   drawFrame(0);
 
-  // 2. Load the remaining frames concurrently in batches
+  // 2. Load the remaining frames concurrently in batches (background loading)
   const BATCH_SIZE = 12;
   for (let i = 1; i < FRAME_COUNT; i += BATCH_SIZE) {
     const batch = [];
@@ -138,12 +149,6 @@ async function preloadImages() {
       batch.push(loadFrame(j));
     }
     await Promise.all(batch);
-
-  }
-
-  // Ensure loader is closed when all frames finish
-  if (!isReady) {
-    markReady();
   }
 }
 
