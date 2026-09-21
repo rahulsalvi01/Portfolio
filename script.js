@@ -135,18 +135,39 @@ async function preloadImages() {
       clearInterval(interval);
       if (!isReady) markReady();
     }
-  }, 20); // 20ms * 100 = 2000ms (2 seconds)
+  }, 20);
 
-  // 1. Immediately load frame 1 for instant visual display
+  // 1. Immediately load frame 0 for instant visual display
   await loadFrame(0);
   drawFrame(0);
 
-  // 2. Load the remaining frames concurrently in batches (background loading)
-  const BATCH_SIZE = 12;
+  // 2. Wait for the window load event to stop the browser tab from "spinning"
+  if (document.readyState !== 'complete') {
+    await new Promise(resolve => window.addEventListener('load', resolve, { once: true }));
+  }
+
+  // 3. Multi-pass loading to ensure the animation isn't "stuck" when scrolling fast
+  
+  // Pass A: Load every 10th frame (skeleton)
+  const passA = [];
+  for (let i = 1; i < FRAME_COUNT; i += 10) {
+    passA.push(loadFrame(i));
+  }
+  await Promise.all(passA);
+
+  // Pass B: Load every 5th frame
+  const passB = [];
+  for (let i = 1; i < FRAME_COUNT; i += 5) {
+    if (!loadedFlags[i]) passB.push(loadFrame(i));
+  }
+  await Promise.all(passB);
+
+  // Pass C: Load all remaining frames concurrently in batches
+  const BATCH_SIZE = 16;
   for (let i = 1; i < FRAME_COUNT; i += BATCH_SIZE) {
     const batch = [];
     for (let j = i; j < Math.min(i + BATCH_SIZE, FRAME_COUNT); j++) {
-      batch.push(loadFrame(j));
+      if (!loadedFlags[j]) batch.push(loadFrame(j));
     }
     await Promise.all(batch);
   }
